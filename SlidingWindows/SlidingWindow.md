@@ -73,3 +73,12 @@ let max = Math.max(...myMap.values())
 1. 先把新数据加进去map
 2. $窗口大小 - map内最大的value > k$ 的话就将左指针移动
 3. 算取窗口大小
+
+# 1423 Maximum Points You Can Obtain from Cards
+>There are several cards arranged in a row, and each card has an associated number of points. The points are given in the integer array cardPoints.
+In one step, you can take one card from the beginning or from the end of the row. You have to take exactly k cards.
+Your score is the sum of the points of the cards you have taken.
+Given the integer array cardPoints and the integer k, return the maximum score you can obtain.
+![Alt text](assets/image.png)
+
+ask to get from front and end, can use sliding windows becuase it is a section(**连续的**)

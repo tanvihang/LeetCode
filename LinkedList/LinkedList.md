@@ -43,3 +43,9 @@ L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
 
 ![Alt text](assets/image-2.png)
 想法：保存一个数组，每次取最前和最后，然后连接起来，保存尾节点，然后重复完成步骤
+
+# 19 Remove Nth Node From End of List
+>Given the head of a linked list, remove the nth node from the end of the list and return its head.
+![Alt text](assets/image-3.png)
+
+1. double pointer!!
