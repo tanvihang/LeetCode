@@ -1,5 +1,11 @@
+#bin and obj of csharp
+bin/
+obj/
+.csproj
+
 # Rider
 .idea/
+.idea
 
 # ReSharper is a .NET coding add-in
 _ReSharper*/
