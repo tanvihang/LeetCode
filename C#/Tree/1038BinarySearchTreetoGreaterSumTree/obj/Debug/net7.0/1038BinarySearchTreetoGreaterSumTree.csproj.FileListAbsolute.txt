@@ -1,0 +1,14 @@
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\bin\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.exe
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\bin\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.deps.json
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\bin\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.runtimeconfig.json
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\bin\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.dll
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\bin\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.pdb
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\obj\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.GeneratedMSBuildEditorConfig.editorconfig
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\obj\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.AssemblyInfoInputs.cache
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\obj\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.AssemblyInfo.cs
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\obj\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.csproj.CoreCompileInputs.cache
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\obj\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.dll
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\obj\Debug\net7.0\refint\1038BinarySearchTreetoGreaterSumTree.dll
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\obj\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.pdb
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\obj\Debug\net7.0\1038BinarySearchTreetoGreaterSumTree.genruntimeconfig.cache
+D:\gitHubRepo\LeetCode\C#\Tree\1038BinarySearchTreetoGreaterSumTree\obj\Debug\net7.0\ref\1038BinarySearchTreetoGreaterSumTree.dll
