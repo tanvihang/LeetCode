@@ -129,3 +129,65 @@ level traverse 可以使用stack，每进一个就推新的进来
 
 方法就是利用Level Traverse获取最右边的数值
 其中level Traverse的方法用queue
+
+# C# sections
+# 1038 Binary Search Tree to Greater Sum Tree
+>Given the root of a Binary Search Tree (BST), convert it to a Greater Tree such that every key of the original BST is changed to the original key plus the sum of all keys greater than the original key in BST.
+As a reminder, a binary search tree is a tree that satisfies these constraints:
+The left subtree of a node contains only nodes with keys less than the node's key.
+The right subtree of a node contains only nodes with keys greater than the node's key.
+Both the left and right subtrees must also be binary search trees.
+![Alt text](assets/image-9.png)
+
+# 2477 Minimum Fuel Cost to Report to the Capital
+>There is a tree (i.e., a connected, undirected graph with no cycles) structure country network consisting of n cities numbered from 0 to n - 1 and exactly n - 1 roads. The capital city is city 0. You are given a 2D integer array roads where roads[i] = [ai, bi] denotes that there exists a bidirectional road connecting cities ai and bi.
+There is a meeting for the representatives of each city. The meeting is in the capital city.
+There is a car in each city. You are given an integer seats that indicates the number of seats in each car.
+A representative can use the car in their city to travel or change the car and ride with another representative. The cost of traveling between two cities is one liter of fuel.
+Return the minimum number of liters of fuel to reach the capital city.
+![Alt text](assets/image-10.png)
+![Alt text](assets/image-11.png)
+![Alt text](assets/image-12.png)
+
+今天第一次用C#使用`List`数据类型，他的数据类型List也是跟js的Array一样，可以`Add()`函数等等，然后查找可以使用`list[0]`类似的方法。
+
+那么来讨论以下这一题的难点吧：
+1. 首先我们获取的数组是`无向`的，也就是说节点0到1可以写成[0,1]或[1,0]都无所谓。
+   1. 解决办法为使用`List<List<int>>`保存key和value
+   2. 然后利用`visited[]`来记录，哪一个key已经被访问过了，那么就可以解决双向的问题。
+2. 第二个点就是怎么计算**燃油费用**，遍历到树的结尾，因为每过一条路就需要**燃油+1**，然后就是考虑人数和汽车能够载的人数，推出`fuel += (people + seats -1)/seats`，假设当前节点有**3**个人，汽车能载**2**个人，那么fuel = (3+2-1)/2 = 2，则需要两辆车才能够载送3个人，所以**燃油费为2**
+
+# Starting in C#
+
+# 1466. Reorder Routes to Make All Paths Lead to the City Zero
+>There are n cities numbered from 0 to n - 1 and n - 1 roads such that there is only one way to travel between two different cities (this network form a tree). Last year, The ministry of transport decided to orient the roads in one direction because they are too narrow.
+Roads are represented by connections where connections[i] = [ai, bi] represents a road from city ai to city bi.
+This year, there will be a big event in the capital (city 0), and many people want to travel to this city.
+Your task consists of reorienting some roads such that each city can visit the city 0. Return the minimum number of edges changed.
+It's guaranteed that each city can reach city 0 after reorder.
+![Alt text](assets/image-13.png)
+
+解题方法一样为从数组变成树，方法就是遍历数组，生成一个key value形式的保存，但由于这一题
+1. 他是单向的（所以需要记录他的走向）
+2. 什么时候需要`+1`
+3. 如何去遍历（深度搜索/广度搜索都可以，重点就是走完整棵树就可以了）
+
+>再C#这里，由于我们要保存的形式如下
+connection:[[0,1],[2,0]]
+[0] -> [1,true],[2,false]
+其中表示，0->1需要反转，0->2不需要反转
+
+新学习几样C#的数据结构
+1. IList
+2. Tuple
+```cs
+IList<Tuple<int,int>> Arr2d[] = new IList<Tuple<int,int>>[n];
+
+for(int i = 0; i<n;i++){
+    Arr2d[i] = new List<Tuple<int,int>>();
+}
+
+foreach(int[] edge in connections){
+    
+}
+```

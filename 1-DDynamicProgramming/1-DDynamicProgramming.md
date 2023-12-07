@@ -45,3 +45,42 @@ let numlength = nums.length
 >你是一个专业的小偷，计划偷窃沿街的房屋，每间房内都藏有一定的现金。这个地方所有的房屋都 围成一圈 ，这意味着第一个房屋和最后一个房屋是紧挨着的。同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警 。
 给定一个代表每个房屋存放金额的非负整数数组，计算你 在不触动警报装置的情况下 ，今晚能够偷窃到的最高金额。
 ![Alt text](assets/image-3.png)
+
+# 开始C#
+
+# 337 House Robber III（动态+深度搜索）
+>The thief has found himself a new place for his thievery again. There is only one entrance to this area, called root.
+Besides the root, each house has one and only one parent house. After a tour, the smart thief realized that all houses in this place form a binary tree. It will automatically contact the police if two directly-linked houses were broken into on the same night.
+Given the root of the binary tree, return the maximum amount of money the thief can rob without alerting the police.
+![Alt text](assets/image-4.png)
+
+这个题目！就是昨天`2023/12/6`做的[2646. Minimize the Total Price of the Trips
+](https://leetcode.cn/problems/minimize-the-total-price-of-the-trips/description/?envType=daily-question&envId=2023-12-06)的简单版本，其中重要理解的就是取或不取当前节点。
+![Alt text](assets/image-5.png)
+看这个图就显而易见乐，分为两个情况
+1. 取自己
+2. 不取自己
+过后就是**动态规划**了，看了下面代码就很容易理解了
+```cs
+    public int Rob(TreeNode root)
+    {
+        Tuple<int, int> myTuple = PostOrder(root);
+        return Math.Max(myTuple.Item1, myTuple.Item2);
+    }
+
+    public Tuple<int,int> PostOrder(TreeNode node)
+    {
+        
+        if (node == null)
+        {
+            return new Tuple<int, int>(0,0);
+        }
+
+        Tuple<int,int> left = PostOrder(node.left);
+        Tuple<int, int> right = PostOrder(node.right);
+
+        return new Tuple<int, int>((node.val + left.Item2 + right.Item2),
+            (Math.Max(left.Item1, left.Item2)) + Math.Max(right.Item1, right.Item2));
+
+    }
+```
