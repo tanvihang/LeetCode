@@ -18,7 +18,7 @@
         foreach(int[] trip in trips){
             DFS(trip[0],-1,trip[1],next,count);
         }
-
+ 
         // 有了每个节点的经过次数后需要计算怎么样的价钱会更好
         int[] pair = DP(0, -1, price, next,count);
         return Math.Min(pair[0],pair[1]);

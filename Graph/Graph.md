@@ -114,3 +114,73 @@ while queue:
 ```
 
 where `clearedQueue` in here take jobs as **time**
+
+# C#
+# 1631. Path With Minimum Effort
+>You are a hiker preparing for an upcoming hike. You are given heights, a 2D array of size rows x columns, where heights[row][col] represents the height of cell (row, col). You are situated in the top-left cell, (0, 0), and you hope to travel to the bottom-right cell, (rows-1, columns-1) (i.e., 0-indexed). You can move up, down, left, or right, and you wish to find a route that requires the minimum effort.
+A route's effort is the maximum absolute difference in heights between two consecutive cells of the route.
+Return the minimum effort required to travel from the top-left cell to the bottom-right cell.
+![Alt text](assets/image-3.png)
+
+- 这一题偏难，涉及的概念更加多
+- 题目解析：因为是要找从一个点到另外一个点，也可以想象成图的连通性（是否连通）。
+  - 所以使用了UnionSet来做
+  - 其中UnionSet主要的函数就只有`find()`,`init()`和`union()`，分别到表找出他的Parent,初始化和将两个节点连接起来。
+
+### UnionSet
+```cs
+ //Union set data structure
+    public class DSU
+    {
+        private int[] pre;
+        private int count;
+
+        //initialize
+        public DSU(int N)
+        {
+            count = N;
+            pre = new int[N];
+
+            //let them parent is same first
+            for (var i = 0; i < N; i++)
+            {
+                pre[i] = i;
+            }
+        }
+        
+        //find function - (find its parent)
+        //other than finding its parent, it also cut the length of him to parent
+        public int find(int x)
+        {
+            if (x != pre[x])
+            {
+                pre[x] = find(pre[x]);
+            }
+
+            return pre[x];
+        }
+        
+        //union function, in this section the parent of x will be parent of y
+        public void union(int x, int y)
+        {
+            int parentX = find(x);
+            int parentY = find(y);
+
+            if (parentX == parentY)
+            {
+                return;
+            }
+
+            pre[parentX] = parentY;
+            count--;
+            return;
+        }
+        
+        //connected function, check if two set is connected
+        public bool connected(int x, int y)
+        {
+            return find(x) == find(y);
+        }
+        
+    }
+```
